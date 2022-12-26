@@ -6,8 +6,8 @@ from discord.ext import commands
 from PIL import Image, ImageDraw, ImageFont
 
 # Create a Bot instance and set the command prefix
-bot = commands.Bot(command_prefix='!')
 BOT_TOKEN = os.environ['BOT_TOKEN']
+bot = commands.Bot(command_prefix='!')
 
 # Function to generate the gradient image
 def generate_gradient(width, height, start_color, end_color):
@@ -35,4 +35,4 @@ async def gradient(ctx, start_color: str, end_color: str):
   await ctx.send(file=discord.File('gradient.png'))
 
 # Run the bot
-bot.run('TOKEN')
+bot.run(BOT_TOKEN)
